@@ -23,7 +23,7 @@ export const Tickets = () => {
   }, [dispatch, isSuccess]);
 
   if (isLoading) {
-    <Spinner />;
+    return <Spinner />;
   }
 
   return (
@@ -37,7 +37,7 @@ export const Tickets = () => {
           <div>Status</div>
           <div></div>
         </div>
-        {tickets.map((ticket) => (
+        {tickets?.map((ticket) => (
           <TicketItem key={ticket.id} ticket={ticket} />
         ))}
       </div>
