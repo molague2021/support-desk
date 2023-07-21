@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getTickets, reset } from '../features/tickets/ticketSlice';
+
 import { Spinner } from '../components/Spinner';
 import { BackButton } from '../components/BackButton';
 import { TicketItem } from '../components/TicketItem';
