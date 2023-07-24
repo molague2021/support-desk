@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'api/tickets/';
+const API_URL = '/api/tickets/';
 
 // Get ticket Notes
 const getNotes = async (ticketId, token) => {
@@ -9,6 +9,8 @@ const getNotes = async (ticketId, token) => {
       Authorization: `Bearer ${token}`,
     },
   };
+
+  console.log('inside getNotes');
   const response = await axios.get(API_URL + ticketId + '/notes', config);
 
   return response.data;

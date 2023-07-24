@@ -14,6 +14,7 @@ const initialState = {
 export const getNotes = createAsyncThunk(
   'notes/getAll',
   async (ticketId, thunkAPI) => {
+    console.log('getNotes Slice');
     try {
       const token = thunkAPI.getState().auth.user.token;
       return await noteService.getNotes(ticketId, token);
@@ -44,7 +45,7 @@ export const noteSlice = createSlice({
       .addCase(getNotes.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.ticket = action.payload;
+        state.notes = action.payload;
       })
       .addCase(getNotes.rejected, (state, action) => {
         state.isLoading = false;
